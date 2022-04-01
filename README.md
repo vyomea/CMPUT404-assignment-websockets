@@ -1,5 +1,6 @@
 CMPUT404-assignment-websockets
 ==============================
+Used this as reference: https://github.com/uofa-cmput404/cmput404-slides/tree/master/examples/WebSocketsExamples
 
 CMPUT404-assignment-websockets
 

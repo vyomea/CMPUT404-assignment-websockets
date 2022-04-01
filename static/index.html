@@ -58,11 +58,12 @@
           arc(
             x,
             y,
-            entity["radius"] ? entity["radius"] : 50,
+            entity["radius"] ? entity["radius"] : 420,
             0,
-            2.0 * Math.PI,
+            2.2,
             false
           );
+          fill();
           stroke();
         }
       }
@@ -80,8 +81,8 @@
       function clearFrame() {
         with (context) {
           moveTo(0, 0);
-          fillStyle = "#000";
-          fillRect(0, 0, W, H);
+          fillStyle = "pink";
+          fillRect(100, 50, W, H);
         }
       }
 
@@ -133,7 +134,7 @@
         // drawNextFrame(); // (but should we?)
         //XXX: Send a XHTML Request that updates the entity you just modified!
         request = {};
-        request = data;
+        request[entity] = data;
         socket.send(JSON.stringify(request))
         drawNextFrame();
 
@@ -243,15 +244,15 @@
       // Add the application specific mouse listeners!
       //XXX: TODO Make these prettier!
       mouse.mousedowners.push(function (x, y, clicked, e) {
-        addEntityWithoutName({ x: x, y: y, colour: "blue" });
-      });
-
-      mouse.mouseuppers.push(function (x, y, clicked, e) {
         addEntityWithoutName({ x: x, y: y, colour: "red" });
       });
 
+      mouse.mouseuppers.push(function (x, y, clicked, e) {
+        addEntityWithoutName({ x: x, y: y, colour: "#90ee90" });
+      });
+
       mouse.mousedraggers.push(function (x, y, clicked, e) {
-        addEntityWithoutName({ x: x, y: y, colour: "green", radius: 10 });
+        addEntityWithoutName({ x: x, y: y, colour: "orange", radius: 20 });
       });
 
       function update() {
