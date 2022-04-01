@@ -244,15 +244,15 @@
       // Add the application specific mouse listeners!
       //XXX: TODO Make these prettier!
       mouse.mousedowners.push(function (x, y, clicked, e) {
-        addEntityWithoutName({ x: x, y: y, colour: "red" });
+        addEntityWithoutName({ x: x, y: y, colour: "red", radius: 50 });
       });
 
       mouse.mouseuppers.push(function (x, y, clicked, e) {
-        addEntityWithoutName({ x: x, y: y, colour: "#90ee90" });
+        addEntityWithoutName({ x: x, y: y, colour: "#90ee90", radius: 50 });
       });
 
       mouse.mousedraggers.push(function (x, y, clicked, e) {
-        addEntityWithoutName({ x: x, y: y, colour: "orange", radius: 20 });
+        addEntityWithoutName({ x: x, y: y, colour: "orange", radius: 30 });
       });
 
       function update() {
